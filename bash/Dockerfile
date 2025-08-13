@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -8,13 +8,13 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y \
     at \
     lsof \
-    python3.7 \
+    python3.12 \
     python3-pip \
-    python3.7-dev \
+    python3.12-dev \
     sqlite3 \
     wget \
     rsync \
-    && python3.7 -m pip install -U pip setuptools \
+    && python3.12 -m pip install -U pip setuptools \
     && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /docker-scripts
@@ -32,7 +32,7 @@ ENV USER=root
 
 WORKDIR /
 
-RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 1
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1
 
 ENV BASH_VERSIONS_DIR /bash
 RUN mkdir $BASH_VERSIONS_DIR \
