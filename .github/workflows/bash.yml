@@ -1,4 +1,5 @@
 name: Create and publish the Cylc bash Docker image for testing
+# https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry
 
 on:
   workflow_dispatch:
