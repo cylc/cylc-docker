@@ -14,7 +14,6 @@ RUN apt-get update && apt-get install -y \
     sqlite3 \
     wget \
     rsync \
-    && python3.12 -m pip install --break-system-packages -U pip setuptools \
     && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /docker-scripts
