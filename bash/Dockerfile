@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     sqlite3 \
     wget \
     rsync \
+    git \
     && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /docker-scripts
