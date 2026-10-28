@@ -36,12 +36,13 @@ RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1
 
 ENV BASH_VERSIONS_DIR /bash
 RUN mkdir $BASH_VERSIONS_DIR \
-    && build-bash-versions 3.2 4.2 5.0
+    && build-bash-versions 3.2 4.2 5.0 5.3
 
 # the last parameter is the priority, the highest value is picked by default
 RUN update-alternatives --install /bin/bash bash /bash/bash-3.2 1 && \
     update-alternatives --install /bin/bash bash /bash/bash-4.2 2 && \
     update-alternatives --install /bin/bash bash /bash/bash-5.0 3 && \
+    update-alternatives --install /bin/bash bash /bash/bash-5.3 4 && \
     update-alternatives --force --all && \
     update-alternatives --list bash
 
